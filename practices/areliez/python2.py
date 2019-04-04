@@ -28,7 +28,39 @@ def sum_to(n):
             var += 1
     else:
         print("You can enter only number less than 36")
-    print(result)
+    print("The sum is: ", result)
+
+
+def days_in_month(month):
+    days_31 = 31
+    days_30 = 30
+    if month is "January":
+        days = days_31
+    elif month is "February":
+        days = 28
+    elif month is "March":
+        days = days_31
+    elif month is "April":
+        days = days_30
+    elif month is "May":
+        days = days_31
+    elif month is "June":
+        days = days_30
+    elif month is "July":
+        days = days_31
+    elif month is "August":
+        days = days_31
+    elif month is "September":
+        days = days_30
+    elif month is "October":
+        days = days_31
+    elif month is "November":
+        days = days_30
+    elif month is "December":
+        days = days_31
+    else:
+        days = "None"
+    print(month, ": ", days, " days")
 
 
 # Tests to area_of_circle.
@@ -37,3 +69,6 @@ area_of_circle(12)
 
 # Test for sum_to
 sum_to(10)
+
+# Test for days_in_month
+days_in_month("September")
