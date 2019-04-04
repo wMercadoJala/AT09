@@ -95,4 +95,15 @@ def no_space(x):
 
     return texto
 
+'''Write a program that reads a string and returns a table of the letters of the alphabet
+ in alphabetical order which occur in the string together with the number of times each letter occurs. ​
+Case should be ignored. A sample output of the program when the user enters the data ​
+“ThiS is String with Upper and lower case Letters”,
+'''
+string = 'ThiS is String with Upper and lower case Letters'
+letras=['a','c','d','e','g','h','i','l','o','p','r','s','t','w','u']
+dic={}
+for i in letras:
+   dic.update({i:(string.count(i))})
 
+print (dic)
