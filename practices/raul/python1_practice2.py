@@ -47,3 +47,27 @@ def sum_to(until_number):
         addition += 1
     print(sum)
 sum_to(50)
+
+#PRACTICE 05
+def is_valid_month(month):
+    is_valid = False
+    valid_month = {"January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"}
+    if month in valid_month: is_valid = True
+    return is_valid
+
+def days_in_month(month):
+    if is_valid_month(month):
+        if month == "January": print(month, "has ", 31, "days")
+        elif month == "February": print(month, "has ", 28, "days")
+        elif month == "March": print(month, "has ", 31, "days")
+        elif month == "April": print(month, "has ", 30, "days")
+        elif month == "May": print(month, "has ", 31, "days")
+        elif month == "Jun": print(month, "has ", 30, "days")
+        elif month == "July": print(month, "has ", 31, "days")
+        elif month == "August": print(month, "has ", 31, "days")
+        elif month == "September": print(month, "has ", 30, "days")
+        elif month == "October": print(month, "has ", 31, "days")
+        elif month == "November": print(month, "has ", 30, "days")
+        elif month == "December": print(month, "has ", 31, "days")
+    else: print("None")
+days_in_month("July")
