@@ -7,8 +7,8 @@
 #XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
 #XO("zzoo") => false
 
-def xo(s):
-    if ((s.count("x")+ s.count("X")) == (s.count("o")+ s.count("O"))):
+def xo(string):
+    if ((string.count("x") + string.count("X")) == (string.count("o") + string.count("O"))):
         return True
     else:
         return False
@@ -27,12 +27,12 @@ print (xo('xxoo'))
 #findNextSquare(114) --> returns -1 since 114 is not a perfect
 
 import math
-next=0
-def find_next_square(sq):
-    next=math.sqrt(sq)
-    if (next!=0):
-        if (sq%next==0):
-            return (next+1)**2
+next = 0
+def find_next_square(square):
+    next = math.sqrt(square)
+    if (next != 0):
+        if (square%next == 0):
+            return (next + 1)**2
         else:
             return -1
     return 1
@@ -46,7 +46,7 @@ print (find_next_square(121))
 
 def sum_two_smallest_numbers(numbers):
     numbers.sort()
-    return numbers[0]+numbers[1]
+    return numbers[0] + numbers[1]
 
 print (sum_two_smallest_numbers([19, 5, 42, 2, 77]))
 
@@ -56,7 +56,7 @@ print (sum_two_smallest_numbers([19, 5, 42, 2, 77]))
 #14: -14
 #-34: 34
 
-def opposite(number):return number*(-1)
+def opposite(number): return number*(-1)
 
 print (opposite(14))
 
@@ -86,14 +86,16 @@ def is_divisible(n,x,y):
 
 print (is_divisible(12,2,6))
 
-#
-def no_space(x):
+#Simple, remove the spaces from the string, then return the resultant string.
+def no_space(string):
     texto = ""
-    for i in x:
+    for i in string:
         if i != " ":
             texto += i
 
     return texto
+
+print (no_space())
 
 '''Write a program that reads a string and returns a table of the letters of the alphabet
  in alphabetical order which occur in the string together with the number of times each letter occurs. ​
@@ -101,8 +103,8 @@ Case should be ignored. A sample output of the program when the user enters the 
 “ThiS is String with Upper and lower case Letters”,
 '''
 string = 'ThiS is String with Upper and lower case Letters'
-letras=['a','c','d','e','g','h','i','l','o','p','r','s','t','w','u']
-dic={}
+letras = ['a','c','d','e','g','h','i','l','o','p','r','s','t','w','u']
+dic = {}
 for i in letras:
    dic.update({i:(string.count(i))})
 
