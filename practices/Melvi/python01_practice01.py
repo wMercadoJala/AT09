@@ -24,7 +24,7 @@ print (xo('xxoo'))
 #Examples:
 #findNextSquare(121) --> returns 144
 #findNextSquare(625) --> returns 676
-#findNextSquare(114) --> returns -1 since 114 is not a perfect
+#findNextSquare(114) --> returns -1 since 114 is not a perfect.
 
 import math
 next = 0
@@ -60,7 +60,8 @@ def opposite(number): return number*(-1)
 
 print (opposite(14))
 
-#Complete the function which takes two arguments and returns all numbers which are divisible by given divisor. First argument is an array of numbers and the second is the divisor.
+#Complete the function which takes two arguments and returns all numbers which are divisible
+#by given divisor. First argument is an array of numbers and the second is the divisor.
 #Example
 #divisible_by([1, 2, 3, 4, 5, 6], 2) == [2, 4, 6]
 
