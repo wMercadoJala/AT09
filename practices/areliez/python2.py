@@ -15,23 +15,51 @@ def is_odd_or_even(number):
 
 def are_prime(values):
     """
-    Return a list with the prime numbers in between the min and max value sending.
-    :param values: range of values.
+    Return a list with the prime numbers of the value list entered.
+    :param values: Values to evaluate if are prime numbers.
     :return: A list of prime numbers.
     """
     result = []
-    for num in values:
-        if num < 1:
+    for number in values:
+        if number <= 1:
             continue
-        elif num == 2:
-            result.append(num)
+        elif number == 2:
+            result.append(number)
         else:
-            for i in range(2, num):
-                if num % i == 0:
-                    break
-                result.append(num)
-                break
+            if is_prime(number) is True:
+                result.append(number)
     return result
+
+
+def are_prime2(min, max):
+    """
+    Return a list of prime numbers between the min and max number entered.
+    :param min: Value min to find the prime numbers.
+    :param max: Value max to find the prime numbers.
+    :return: A prime number list between the min an max number entered.
+    """
+    result = []
+    for number in range(min, max):
+        if number <= 1:
+            continue
+        elif number == 2:
+            result.append(number)
+        else:
+            if is_prime(number) is True:
+                result.append(number)
+    return result
+
+
+def is_prime(number):
+    """
+    Evaluate if the number is prime.
+    :param number: value to evaluate if is prime.
+    :return: if is prime True else False.
+    """
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+    return True
 
 
 def area_of_circle(r):
@@ -115,5 +143,8 @@ days_in_month("September")
 is_odd_or_even(2)
 
 # Test to get the prime numbers.
-values1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 30, 31, 36]
+values1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 21, 30, 31, 36]
 print("The next number are prime: ", are_prime(values1))
+
+print("The next number are prime: ", are_prime2(1, 36))
+
