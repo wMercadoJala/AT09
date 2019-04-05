@@ -17,11 +17,23 @@ def get_url(text):
         print("There isn't url in the text")
 
 
+def replace(text, old, new):
+    """
+    This replace all coincidence of a string in a text by other string.
+    :param text:
+    :param old:
+    :param new:
+    :return:
+    """
+    text_new = text.replace(old, new)
+    print(text_new)
+
+
 def count_chars(sentence):
     """
     Find the coincidence by letter.
     :param sentence:
-    :return: 
+    :return:
     """
     coincidence = {}
     list_dict = []
@@ -48,3 +60,7 @@ count_chars("ThiS is String with Upper and lower * case Letters* /")
 
 # Test to get the url in a text.
 get_url("This is an http://myurl.fj for the example")
+
+# test for function replace.
+song = "I love spom! Spom is my favorite food.Spom, spom, yum!"
+replace(song, "om", "am")
