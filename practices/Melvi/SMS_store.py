@@ -12,6 +12,7 @@ class SMS_store:
     def message_count(self):
         return len(self.messages)
 
+
     def get_unread_indexes(self):
          cont = 0
          for msg in self.messages:
@@ -34,7 +35,6 @@ class SMS_message:
          self.from_number=from_number
          self.time_arrived=time_arrived
          self.text_of_SMS=text_of_SMS
-
 
 if __name__ == "__main__":
     cell_phone = SMS_store()
