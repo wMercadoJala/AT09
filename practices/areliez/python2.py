@@ -116,4 +116,4 @@ is_odd_or_even(2)
 
 # Test to get the prime numbers.
 values1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 30, 31, 36]
-print(are_prime(values1))
+print("The next number are prime: ", are_prime(values1))
