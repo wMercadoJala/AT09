@@ -56,10 +56,11 @@ def is_prime(number):
     :param number: value to evaluate if is prime.
     :return: if is prime True else False.
     """
+    prime = True
     for i in range(2, number):
         if number % i == 0:
-            return False
-    return True
+            prime = False
+    return prime
 
 
 def area_of_circle(r):
@@ -70,7 +71,6 @@ def area_of_circle(r):
     """
     if r > 10:
         print("Circle's area is: ", math.pi * r ** 2)
-
     else:
         print("To get the area you should enter a number greater than 10")
 
