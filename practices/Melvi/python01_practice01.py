@@ -81,8 +81,8 @@ print (divisible_by([1, 2, 3, 4, 5, 6], 2))
 #is_divisible(100,5,3)--> False because 100 is not divisible by 3
 #is_divisible(12,7,5)--> False because 12 is neither divisible by 7 nor 5
 
-def is_divisible(n,x,y):
-    return n % x == 0 and n % y == 0
+def is_divisible(number,diviblex,divisibley):
+    return number % diviblex == 0 and number % divisibley == 0
 
 print (is_divisible(12,2,6))
 
