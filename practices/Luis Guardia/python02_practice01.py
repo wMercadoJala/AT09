@@ -11,7 +11,7 @@ def is_even(number):
 # call to is_even function
 is_even(2)
 
-def generate_list(max,min):
+def generate_list(max, min):
     """
     :param max:
     :param min:
