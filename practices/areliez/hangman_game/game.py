@@ -7,7 +7,6 @@ class Game:
         self.word_or_phrase = word_or_phrase.get_value_of_words_or_phrases()
 
     def enter_value2(self):
-        print(self.word_or_phrase)
         print("Enter a character please:")
         current_word_to_guess = []
         errors = 0
