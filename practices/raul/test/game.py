@@ -16,33 +16,56 @@ class Game:
 
     def put_a_letter(self):
         res = False
-        self.letter = input("Input a letter please!! ")
+        self.letter = input("Input a letter please!! ").upper()
+        self.letter.upper()
         if len(self.letter) > 1:
             print("Please put a alone letter.")
             self.put_a_letter()
         else:
-            if (self.letter in self.word) != -1:
-                res = True
-            print("Great!!")
-
+            res = self.letter in self.word
         return res
 
     def print_letter(self):
         for i in range(len(self.word)):
-            if self.letter is self.word[i]:
+            if self.letter == self.word[i]:
+                print('into: ', i)
                 self.visible_characters[i] = self.letter
-        print(self.visible_characters)
+        for i in range(len(self.visible_characters)):
+            print(self.visible_characters[i], end = ' ')
+
+    def print_hangman(self, part_number):
+        hagman = ['/', '\\', '|', '/', '\\', '0']
+        i = 0
+        while i < part_number:
+            print(hagman[i])
+            i += 1
+
+    def visible_charactes_to_word(self):
+        return ''.join(str(word) for word in self.visible_characters)
 
 
+def init_game():
+    lives = 6
+    hagman_pos = 1
+    word = WordOrPhrase()
+    text = word.get_word()
+    print("guess: ",text)
+    game = Game(text, "Raul")
+    while lives > 0 and (game.word != game.visible_charactes_to_word()):
+        if game.put_a_letter():
+            game.print_letter()
+            print('Great !!!')
+        else:
+            game.print_hangman(hagman_pos)
+            lives -= 1
+            hagman_pos += 1
+            print('wrong !!!')
+    if lives == 0:
+        print("You lost :(")
+    else:
+        print('You are a winner!! :)')
 
 
+init_game()
 
-word = WordOrPhrase()
-text = word.get_word()
-print(text)
-game = Game(text, "Raul")
 
-if game.put_a_letter():
-    print('positive ' + str(game.print_letter()))
-else:
-    print('negative')
