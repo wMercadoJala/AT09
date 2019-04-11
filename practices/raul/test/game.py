@@ -1,5 +1,6 @@
 from practices.raul.test.word_or_phrase import WordOrPhrase
 
+
 class Game:
 
     def __init__(self, word, gamer_name):
@@ -34,31 +35,31 @@ class Game:
             print(self.visible_characters[i], end = ' ')
 
     def print_hangman(self, part_number):
-        hagman = ['/', '\\', '|', '/', '\\', '0']
+        hangman = ['/', '\\', '|', '/', '\\', '0']
         i = 0
         while i < part_number:
-            print(hagman[i])
+            print(hangman[i])
             i += 1
 
-    def visible_charactes_to_word(self):
+    def visible_characters_to_word(self):
         return ''.join(str(word) for word in self.visible_characters)
 
 
 def init_game():
     lives = 6
-    hagman_pos = 1
+    hangman_pos = 1
     word = WordOrPhrase()
     text = word.get_word()
     print("guess: ",text)
     game = Game(text, "Raul")
-    while lives > 0 and (game.word != game.visible_charactes_to_word()):
+    while lives > 0 and (game.word != game.visible_characters_to_word()):
         if game.put_a_letter():
             game.print_letter()
             print('Great !!!')
         else:
-            game.print_hangman(hagman_pos)
+            game.print_hangman(hangman_pos)
             lives -= 1
-            hagman_pos += 1
+            hangman_pos += 1
             print('wrong !!!')
     if lives == 0:
         print("You lost :(")
@@ -67,5 +68,3 @@ def init_game():
 
 
 init_game()
-
-
