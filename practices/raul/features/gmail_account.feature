@@ -8,8 +8,12 @@ Feature: Test the form to create a new gmail account
       And we fill the <password> password field
       And we fill the  "confirm password" field
       And we press the "create" button for a new account
-     Then we have to a new gmail account with <message_successful>
+     Then we have to a new gmail account with <message>
       And we have to go the Sign In page of gmail
   Examples: fields
-    |first_name|last_name|user_name|password|message_successful|
-    |Raul     |Choque  |raulito |!r000:) |Congratulation!! Your account is successful|
+    |first_name|last_name|user_name|password|message|
+    |Raul      |Choque   |raulito  |!r000:) |Congratulation!! Your account is successful|
+    |r         |c        | carrasco|!c000:) |Congratulation!! Your account is successful|
+    |          |c        | carrasco|!c000:) |Error!! the First Name is required         |
+    |r         |         | carrasco|!c000:) |Error!! the Last Name is required          |
+    |r         |c        | carrasco|        |Error!! the Password is required           |
