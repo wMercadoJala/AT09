@@ -1,5 +1,17 @@
 from behave import *
 
+use_step_matcher("parse")
+
+
+@then("I should see the error message: {error:w}")
+def step_impl(context, error):
+    """
+    :type context: behave.runner.Context
+    :type arg0: str
+    """
+    pass
+
+
 use_step_matcher("re")
 
 
@@ -8,112 +20,129 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    #raise NotImplementedError(u'STEP: Given I am looking at the creation account page')
-    pass
+    print("*****Creation Page*****")
 
 
-@given("I fill (.+) in first name field")
-def step_impl(context, arg0):
+@when("I fill (([A-Za-z])\w+) in first name field")
+def step_impl(context, first):
     """
     :type context: behave.runner.Context
     :type arg0: str
     """
-    raise NotImplementedError(u'STEP: Given I fill <first name> in first name field')
+    context.first = first
 
 
-@step("I fill the (.+) in last name field")
-def step_impl(context, arg0):
+@step("I fill the (([A-Za-z])\w+) in last name field")
+def step_impl(context, last):
     """
     :type context: behave.runner.Context
     :type arg0: str
     """
-    raise NotImplementedError(u'STEP: And I fill the <last name> in last name field')
+    context.last = last
 
 
-@given("I open the browser at : www\.gmail\.com/singup")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    raise NotImplementedError(u'STEP: Given I open the browser at : www.gmail.com/singup')
-
-
-@step("I fill the (?P<username>.+) in username")
+@step("I fill the (.*) in username")
 def step_impl(context, username):
     """
     :type context: behave.runner.Context
     :type username: str
     """
-    raise NotImplementedError(u'STEP: And I fill the <username> in username')
+    context.username = username
 
 
-@step("I fill the (?P<password>.+) in Create a password field")
+@step("I fill the (^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$) in Create a password field")
 def step_impl(context, password):
     """
     :type context: behave.runner.Context
     :type password: str
     """
-    raise NotImplementedError(u'STEP: And  I fill the <password> in Create a password field')
+    context.password = password
 
 
-@step("I fill (?P<day>.+) in Day field")
+@step("I fill the (^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$) in Confirm your password field")
+def step_impl(context, confirm_password):
+    """
+    :type context: behave.runner.Context
+    :type arg0: str
+    """
+    context.confirm_password = confirm_password
+
+
+@step("I fill (\d{1,2}) in Day field")
 def step_impl(context, day):
     """
     :type context: behave.runner.Context
     :type day: str
     """
-    raise NotImplementedError(u'STEP: And I fill <day> in Day field')
+    context.day = day
 
 
-@step("I fill (?P<year>.+) in Year field")
+@step("I fill (\d{4}) in Year field")
 def step_impl(context, year):
     """
     :type context: behave.runner.Context
     :type year: str
     """
-    raise NotImplementedError(u'STEP: And I fill <year> in Year field')
+    context.year = year
 
 
-@step("I select (?P<gender>.+) in Gender dropdown")
+@step("I select (^[FM]) in Gender dropdown")
 def step_impl(context, gender):
     """
     :type context: behave.runner.Context
     :type gender: str
     """
-    raise NotImplementedError(u'STEP: And I select <gender> in Gender dropdown')
+    context.gender = gender
 
 
-@step("I select (?P<Country>.+) in Country")
+@step("I select (([A-Za-z])\w+) in Country")
 def step_impl(context, Country):
     """
     :type context: behave.runner.Context
     :type Country: str
     """
-    raise NotImplementedError(u'STEP: And I select <Country> in Country')
+    context.country = Country
 
 
-@step("I fill (?P<cellphone>.+) in Mobile phone field")
+@step(
+    "I fill (^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$) in Mobile phone field")
 def step_impl(context, cellphone):
     """
     :type context: behave.runner.Context
     :type cellphone: str
     """
-    raise NotImplementedError(u'STEP: And I fill <cellphone> in Mobile phone field')
+    context.cellphone = cellphone
 
 
-@step("I fill (.+) in Your current email address field")
-def step_impl(context, arg0):
+@step("I fill (.*) in Your current email address field")
+def step_impl(context, email):
     """
     :type context: behave.runner.Context
-    :type arg0: str
+    :type email: str
     """
-    raise NotImplementedError(u'STEP: And I fill <current email> in Your current email address field')
+    context.email = email
 
 
-@step("I select (?P<month>.+) in Birthday dropdown")
+@step("I select (([A-Za-z])\w+) in Birthday dropdown")
 def step_impl(context, month):
     """
     :type context: behave.runner.Context
     :type month: str
     """
-    raise NotImplementedError(u'STEP: And I select <month> in Birthday dropdown')
+    context.month = month
+
+
+@then("I should have a message of successful")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('I click on "Sign Up" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    print("click on button")
