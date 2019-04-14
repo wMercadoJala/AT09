@@ -10,10 +10,13 @@ use_step_matcher("parse")
 def step_impl(context):
     print("*********OPEN GMAIL REGISTRATION PAGE************")
     context.first = ''
-    # context.last = ''
-    context.user_name=''
-    # context.pws = ''
-    print (context.test)
+    context.last = ''
+    context.user_name = ''
+    context.pws = ''
+    context.confirm_pws = ''
+    context.country_code = ''
+
+
 @when(u'I fill first_name: {first}')
 def step_impl(context, first):
     context.first = first
@@ -28,14 +31,15 @@ def step_impl(context, last):
 def step_impl(context, user_name):
     context.user_name= user_name
 
+
 @when(u'I fill password: {pws}')
 def step_impl(context, pws):
     context.pws = pws
 
 
-@when(u'I fill confirm_pws')
-def step_impl(context):
-    context.confirm_pws = context.pws
+@when(u'I fill confirm_pws: {confirm_pws}')
+def step_impl(context, confirm_pws):
+    context.confirm_pws = confirm_pws
 
 
 @when(u'I fill birthday month: {month}')
@@ -76,9 +80,9 @@ def step_impl(context, current_mail):
 @when(u'I press the Register Button')
 def step_impl(context):
    context.results = Validfields.perform_validated(context.first, context.last, context.user_name, context.pws,
-                                                  context.month, context.day, context.year,
-                                                  context.gender, context.country_code, context.phone_number,
-                                                  context.current_mail)
+                                                   context.confirm_pws, context.month, context.day, context.year,
+                                                   context.gender, context.country_code, context.phone_number,
+                                                   context.current_mail)
 
 @then(u'I get the {message} message')
 def step_impl(context, message):
