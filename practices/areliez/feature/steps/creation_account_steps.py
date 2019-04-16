@@ -110,7 +110,7 @@ def step_impl(context, cellphone):
     :type context: behave.runner.Context
     :type cellphone: str
     """
-    context.cellphonee = cellphone
+    context.cellphone = cellphone
     context.message = "Account created successfully"
 
 

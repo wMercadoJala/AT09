@@ -2,9 +2,10 @@ Feature: Create new account of gmail
   As a common user
   I want to create a new account
   In order to verify the creation of  an account successful
+  Background:
+  Given I am looking at the creation account page
 
   Scenario Outline: Successful creation account sending only required fields
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
@@ -21,7 +22,6 @@ Feature: Create new account of gmail
       |  Areliez | Vargas | areliez.vargas | Control8 |
 
   Scenario Outline: Successful creation account all fields
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
@@ -43,7 +43,6 @@ Feature: Create new account of gmail
 
 
   Scenario Outline: Successful creation account without gender field
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
@@ -64,7 +63,6 @@ Feature: Create new account of gmail
 
 
   Scenario Outline: Creation of account Successful without filling Birthday section
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
@@ -83,7 +81,6 @@ Feature: Create new account of gmail
 
 
   Scenario Outline: Creation of account Successful without filling Mobile phone
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
@@ -104,7 +101,6 @@ Feature: Create new account of gmail
 
 
   Scenario Outline: Creation of the account failed filling firs name or last name with numbers or special character
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
@@ -117,7 +113,6 @@ Feature: Create new account of gmail
 
 
   Scenario: Creation of the account failed when the user name  was registered
-    Given I am looking at the creation account page
     When I fill Araceli in first name field
     And I fill the Pardo in last name field
     And I fill the araceli.p in username
@@ -126,7 +121,6 @@ Feature: Create new account of gmail
 
 
   Scenario Outline: Creation of the account failed when the user name isn't valid
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
@@ -141,7 +135,6 @@ Feature: Create new account of gmail
 
 
   Scenario Outline: Creation of the account failed when the password isn't valid
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
@@ -155,7 +148,6 @@ Feature: Create new account of gmail
 
 
   Scenario Outline: Creation of the account failed when the password confirm invalid
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
@@ -169,7 +161,6 @@ Feature: Create new account of gmail
 
 
    Scenario Outline: Creation of the account failed when the the cellphone isn't valid
-    Given I am looking at the creation account page
     When I fill <first name> in first name field
     And I fill the <last name> in last name field
     And I fill the <username> in username
